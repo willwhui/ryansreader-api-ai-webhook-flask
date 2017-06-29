@@ -19,4 +19,5 @@ def signin():
     return render_template('form.html', message='Bad username or password', username=username)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    # app.run(host='0.0.0.0')
+    app.run('0.0.0.0', port=8100, ssl_context='adhoc')
