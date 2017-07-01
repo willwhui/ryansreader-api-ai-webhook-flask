@@ -21,8 +21,12 @@ def signin():
 
 @app.route('/ryansreader', methods=['GET', 'POST'])
 def ryansreader():
-	j = render_template('ryansreader.json')
-	return jsonify(j)
+	list = [
+		{'speech': 'Webhook: I\'m sorry. My responses are limited. You must ask the right questions.'},
+		{'displayText': 'Webhook: I\'m sorry. My responses are limited. You must ask the right questions.'}
+    ]
+	return jsonify(results=list)
+
 if __name__ == '__main__':
     # app.run(host='0.0.0.0')
     app.run('0.0.0.0', port=8100, ssl_context='adhoc')
