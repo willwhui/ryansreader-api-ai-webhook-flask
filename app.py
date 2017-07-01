@@ -22,10 +22,9 @@ def signin():
 @app.route('/ryansreader', methods=['GET', 'POST'])
 def ryansreader():
 	list = [
-		{'speech': 'Webhook: I\'m sorry. My responses are limited. You must ask the right questions.'},
-		{'displayText': 'Webhook: I\'m sorry. My responses are limited. You must ask the right questions.'}
+		{'speech': 'Webhook: I\'m sorry. My responses are limited. You must ask the right questions.', 'displayText': 'Webhook: I\'m sorry. My responses are limited. You must ask the right questions.'}
     ]
-	return jsonify(results=list)
+	return jsonify(list)
 
 if __name__ == '__main__':
     # app.run(host='0.0.0.0')
