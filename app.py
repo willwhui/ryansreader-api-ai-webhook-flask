@@ -28,4 +28,4 @@ def ryansreader():
 
 if __name__ == '__main__':
     # app.run(host='0.0.0.0')
-    app.run('0.0.0.0', port=8100, ssl_context='adhoc')
+    app.run('0.0.0.0', port=443, ssl_context='adhoc')
