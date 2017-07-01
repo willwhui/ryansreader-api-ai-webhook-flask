@@ -18,6 +18,9 @@ def signin():
         return render_template('signin-ok.html', username=username)
     return render_template('form.html', message='Bad username or password', username=username)
 
+@app.route('/ryansreader', methods=['GET', 'POST'])
+def ryansreader():
+	return render_template('ryansreader.json')
 if __name__ == '__main__':
     # app.run(host='0.0.0.0')
     app.run('0.0.0.0', port=8100, ssl_context='adhoc')
