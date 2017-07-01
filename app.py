@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from flask import jsonify
 
 app = Flask(__name__)
 
@@ -20,7 +21,8 @@ def signin():
 
 @app.route('/ryansreader', methods=['GET', 'POST'])
 def ryansreader():
-	return render_template('ryansreader.json')
+	j = render_template('ryansreader.json')
+	return jsonify(j)
 if __name__ == '__main__':
     # app.run(host='0.0.0.0')
     app.run('0.0.0.0', port=8100, ssl_context='adhoc')
