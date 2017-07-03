@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 from flask import jsonify
+from flask import json
 
 app = Flask(__name__)
 
@@ -21,12 +22,16 @@ def signin():
 
 @app.route('/ryansreader', methods=['GET', 'POST'])
 def ryansreader():
-	list = [
-		{'speech': 'Webhook: I\'m sorry. My responses are limited. You must ask the right questions.', 'displayText': 'Webhook: I\'m sorry. My responses are limited. You must ask the right questions.'}
-    ]
-	return jsonify(list)
+    data = 'This is a sample response from your webhook!'
+    response = app.response_class(
+        response=json.dumps({"speech": data, "displayText": data}),
+        status=200,
+        mimetype='application/json'
+    )
+    return response
+    #return jsonify({"speech": response, "displayText": response})
 
 if __name__ == '__main__':
     # only usefull when this moudle directly runed like " python3 app.py"
-    app.run(host='0.0.0.0', port=5001)
+    app.run(host='0.0.0.0', port=80)
     # app.run('0.0.0.0', port=443, ssl_context='adhoc')
