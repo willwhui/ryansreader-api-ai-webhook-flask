@@ -1,0 +1,10 @@
+{
+  "speech":"<speak> <audio src=\"{{base_url}}{{audio_file}}\"></audio> </speak>",
+  "data":{
+    "google":{
+      "expect_user_response": true,
+      "is_ssml": true
+    }
+  }
+}
+
